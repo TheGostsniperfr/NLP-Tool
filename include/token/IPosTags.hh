@@ -1,3 +1,6 @@
+#ifndef IPOS_TAG_H
+#define IPOS_TAG_H
+
 #include <iostream>
 #include <unordered_map>
 #include <string>
@@ -5,8 +8,13 @@
 
 using namespace std;
 
-// List from https://stackoverflow.com/questions/15388831/what-are-all-possible-pos-tags-of-nltk
+struct PosTagInfo
+{
+    std::string tagName;       
+    std::string description;   
+};
 
+// List from https://stackoverflow.com/questions/15388831/what-are-all-possible-pos-tags-of-nltk
 enum PosTags
 {
     CC, // conjunction, coordinating
@@ -44,3 +52,7 @@ enum PosTags
     PONCT,  // Punctuation
 };
 
+PosTags getPosTagFromToken(const string& tag);
+PosTagInfo getPosTagInfo(PosTags tag);
+
+#endif
