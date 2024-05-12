@@ -180,11 +180,11 @@ int main(int argc, char** argv)
   CRF_Model crfm;
 
   if (!ENJU) {
-    cerr << "loading the models from the directory \"" << MODEL_DIR << "\" ...";
+    cout << "loading the models from the directory \"" << MODEL_DIR << "\" ...";
   }
   if (!crfm.load_from_file(MODEL_DIR + "model.la", ENJU ? false : true)) exit(1);
   if (!ENJU) {
-    cerr << "done" << endl;
+    cout << "done" << endl;
   }
 
   //  crfm.save_to_file("test");

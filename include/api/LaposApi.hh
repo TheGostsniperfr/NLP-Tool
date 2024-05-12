@@ -9,13 +9,14 @@
 #include <string>
 #include <vector>
 #include <utility>
+#include <cstdio>
+#include <memory>
+#include <stdexcept>
 
 using namespace std;
 
-
-
-vector<pair<string, PosTags>> getPosTagText(const string& text);
+vector<pair<string, PosTags>> getPosTagText(string text);
 void printPosTagText(vector<pair<string, PosTags>> posTagText);
-
+string getApiPOSTaggingResponse(string text);
 
 #endif
