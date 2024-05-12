@@ -5,6 +5,8 @@
 #include <unordered_map>
 #include <string>
 #include <stdexcept>
+#include <vector>
+#include <utility>
 
 using namespace std;
 
@@ -52,6 +54,7 @@ enum PosTags
     PONCT,  // Punctuation
 };
 
+void printPosTagText(vector<pair<string, PosTags>> posTagText);
 PosTags getPosTagFromToken(const string& tag);
 PosTagInfo getPosTagInfo(PosTags tag);
 

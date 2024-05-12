@@ -91,3 +91,9 @@ PosTagInfo getPosTagInfo(PosTags tag) {
         throw std::invalid_argument("Unknown PosTag");
     }
 }
+
+void printPosTagText(vector<pair<string, PosTags>> posTagText) {
+    for(pair<string, PosTags> e : posTagText) {
+        cout << e.first << " | " << getPosTagInfo(e.second).tagName << endl;
+    }
+}
