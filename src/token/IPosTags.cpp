@@ -45,8 +45,6 @@ PosTags getPosTagFromToken(const string& tag) {
     }
 }
 
-
-
 PosTagInfo getPosTagInfo(PosTags tag) {
     const unordered_map<PosTags, PosTagInfo> posTagDescriptions = {
         {PosTags::CC, {"CC", "Conjunction, Coordinating"}},
