@@ -19,7 +19,6 @@ int main(int argc, char* argv[]) {
 
         if(args[i] == "-t" || args[i] == "-textInput") {
             textInput = args[i+1];
-            cout << "textInput: " + textInput << endl;
         }
     }
 
