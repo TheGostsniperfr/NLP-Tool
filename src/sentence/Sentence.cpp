@@ -23,33 +23,18 @@
 
 */
 
-#include <string>
-#include <list>
+#include "sentence/Sentence.hh"
 
-#include "../src/token/Token.cpp"
-#include "../src/sentence/tokenization.cpp"
+Sentence::Sentence(string inputText) {
+    this->inputText = inputText;
+    this->tokenSentence = parseText(this->inputText);
+}
 
-using namespace std;
-
-class Sentence
-{
-private:
-    string inputText;
-    list<Token> tokenSentence;
-public:
-    Sentence(string inputText) {
-        this->inputText = inputText;
-        this->tokenSentence = parseText(this->inputText);
+string Sentence::toString() const {
+    ostringstream oss;
+    for(Token token : this->tokenSentence) {
+        oss << token.getPostProcessingString() << " ";
     }
 
-    string toString() {
-        ostringstream oss;
-        for(Token token : this->tokenSentence) {
-            oss << token.getPostProcessingString() << " ";
-        }
-
-        return oss.str();
-    } 
-};
-
-
+    return oss.str();
+}

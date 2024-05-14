@@ -13,19 +13,9 @@
 
 */
 
-class PreMatchingModel
-{
-private:
-    /* data */
-public:
-    PreMatchingModel(/* args */);
-    ~PreMatchingModel();
-};
+#include "preMatching/PreMatchingModel.hh"
 
-PreMatchingModel::PreMatchingModel(/* args */)
-{
-}
 
-PreMatchingModel::~PreMatchingModel()
-{
+PreMatchingModel::PreMatchingModel() {
+    
 }

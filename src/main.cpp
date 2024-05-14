@@ -42,8 +42,8 @@ int main(int argc, char* argv[]) {
     }
 
 
-    Factory::FactoryBuilder fb = new Factory::FactoryBuilder("Hello world ! I'm John. Is John's phone on the table?");
-    Factory::Factory factory = fb.build();
+    FactoryBuilder fb = FactoryBuilder("Hello world ! I'm John. Is John's phone on the table?");
+    Factory factory = fb.build();
 
     cout << factory.getSentence().toString();
 

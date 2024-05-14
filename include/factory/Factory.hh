@@ -15,9 +15,10 @@ class FactoryBuilder;
 class Factory {
 private:
     Sentence sentence;
+    list<PreMatchingModel> preMatchingModelList;
 
 public:
-    Factory(const Sentence& sentence);
+    Factory(Sentence sentence, list<PreMatchingModel> preMatchingModelList);
 
     Sentence getSentence() const;
 };

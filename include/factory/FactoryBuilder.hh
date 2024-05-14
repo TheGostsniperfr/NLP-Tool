@@ -21,7 +21,7 @@ public:
 
     FactoryBuilder& addPreMatchingModel(const PreMatchingModel& preMatchingModel);
 
-    Factory build();
+    Factory build() const;
 };
 
 

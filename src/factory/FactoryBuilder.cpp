@@ -28,6 +28,6 @@ FactoryBuilder& FactoryBuilder::addPreMatchingModel(const PreMatchingModel& preM
     return *this;
 }
 
-Factory FactoryBuilder::build() {
+Factory FactoryBuilder::build() const {
     return Factory(Sentence(this->inputText), this->preMatchingModelList);
 }

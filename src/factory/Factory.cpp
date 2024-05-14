@@ -13,11 +13,14 @@
 */
 
 
-#include "Factory.hh"
+#include "factory/Factory.hh"
 
-Factory::Factory(const Sentence& sentence) : sentence(sentence) {}
+Factory::Factory(Sentence sentence, list<PreMatchingModel> preMatchingModelList) {
+    this->sentence = sentence;
+    this->preMatchingModelList = preMatchingModelList;
+}
 
-Sentence Factory::getSentence() {
+Sentence Factory::getSentence() const {
     return this->getSentence();
 }
 

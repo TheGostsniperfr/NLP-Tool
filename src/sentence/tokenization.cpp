@@ -1,10 +1,4 @@
-#include <string>
-#include <list>
-#include <regex>
-
-#include "../src/token/Token.cpp"
-
-using namespace std;
+#include "sentence/tokenization.hh"
 
 list<Token> parseText(const string& text) {
     list<Token> tokenList;
