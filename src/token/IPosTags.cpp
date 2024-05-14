@@ -2,6 +2,7 @@
 
 PosTags getPosTagFromToken(const string& tag) {
     static const unordered_map<string, PosTags> tagToTokenMap = {
+        {"None", PosTags::NONE},
         {"CC", PosTags::CC},
         {"CD", PosTags::CD},
         {"DT", PosTags::DT},
@@ -47,6 +48,7 @@ PosTags getPosTagFromToken(const string& tag) {
 
 PosTagInfo getPosTagInfo(PosTags tag) {
     const unordered_map<PosTags, PosTagInfo> posTagDescriptions = {
+        {PosTags::CC, {"NONE", "Pos Tag not defind"}},
         {PosTags::CC, {"CC", "Conjunction, Coordinating"}},
         {PosTags::CD, {"CD", "Numeral, Cardinal"}},
         {PosTags::DT, {"DT", "Determiner"}},
