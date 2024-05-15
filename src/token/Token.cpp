@@ -23,11 +23,11 @@ Token::Token(string originalString) {
     this->posTag = NONE;
 };
 
-string Token::getOriginalString() const {
+string Token::getOriginalString() {
     return this->originalString;
 }
 
-string Token::getPostProcessingString() const {
+string Token::getPostProcessingString() {
     return this->postProcessingString;
 }
 
@@ -35,15 +35,15 @@ void Token::setPosProcessingString(string postProcessingString) {
     this->postProcessingString = postProcessingString;
 }
 
-PosTags Token::getPosTag() const {
+PosTags Token::getPosTag() {
     return this->posTag;
 }
 
-string Token::getPosTagName() const {
+string Token::getPosTagName() {
     return getPosTagInfo(this->posTag).tagName;
 }
 
-string Token::getPosTagDescription() const {
+string Token::getPosTagDescription() {
     return getPosTagInfo(this->posTag).description;
 }
 

@@ -2,8 +2,8 @@
 #include <vector>
 
 #include "api/LaposApi.cpp"
-#include "factory/Factory.cpp"
-#include "factory/FactoryBuilder.cpp"
+#include "factory/Factory.hh"
+#include "factory/FactoryBuilder.hh"
 
 using namespace std;
 
@@ -41,18 +41,17 @@ int main(int argc, char* argv[]) {
         return 0;
     }
 
-
-    FactoryBuilder fb = FactoryBuilder("Hello world ! I'm John. Is John's phone on the table?");
-    Factory factory = fb.build();
-
-    cout << factory.getSentence().toString();
+    FactoryBuilder* fb = new FactoryBuilder("Hello world ! I'm John. Is John's phone on the table?");
+    Factory* factory = fb->build();
+    
+    cout << factory->getSentence()->toString();
 
     // Transform textInput input in POS Tagging (via lapos)
-    LaposApi* api = new LaposApi(textInput, verbose);
-    api->run();
+    // LaposApi* api = new LaposApi(textInput, verbose);
+    // api->run();
 
-    // Free memory
-    delete api;
+    // // Free memory
+    // delete api;
 
     return 0;
 }

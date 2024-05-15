@@ -9,7 +9,7 @@
 
 using namespace std;
 
-list<Token> parseText(const string& text);
+list<Token*> parseText(const string& text);
 
 
 #endif

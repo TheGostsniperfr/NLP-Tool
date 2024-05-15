@@ -17,17 +17,17 @@ private:
 public:
     Token(string originalString);
 
-    string getOriginalString() const;
+    string getOriginalString();
 
-    string getPostProcessingString() const;
+    string getPostProcessingString();
 
     void setPosProcessingString(string postProcessingString);
 
-    PosTags getPosTag() const;
+    PosTags getPosTag();
 
-    string getPosTagName() const;
+    string getPosTagName();
 
-    string getPosTagDescription() const;
+    string getPosTagDescription();
 
     void setPosTag(PosTags posTag); 
 };

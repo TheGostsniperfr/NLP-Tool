@@ -42,7 +42,7 @@ PosTags getPosTagFromToken(const string& tag) {
     if (it != tagToTokenMap.end()) {
         return it->second; 
     } else {
-        throw std::invalid_argument("Unknown tag: |" + tag + "|"); 
+        throw invalid_argument("Unknown tag: |" + tag + "|"); 
     }
 }
 
@@ -88,7 +88,7 @@ PosTagInfo getPosTagInfo(PosTags tag) {
     if (it != posTagDescriptions.end()) {
         return it->second; 
     } else {
-        throw std::invalid_argument("Unknown PosTag");
+        throw invalid_argument("Unknown PosTag");
     }
 }
 

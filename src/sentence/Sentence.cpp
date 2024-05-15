@@ -30,11 +30,12 @@ Sentence::Sentence(string inputText) {
     this->tokenSentence = parseText(this->inputText);
 }
 
-string Sentence::toString() const {
+string Sentence::toString() {
     ostringstream oss;
-    for(Token token : this->tokenSentence) {
-        oss << token.getPostProcessingString() << " ";
+    for(Token* token : this->tokenSentence) {
+        oss << token->getOriginalString() << " ";
     }
 
+    oss << endl;
     return oss.str();
 }

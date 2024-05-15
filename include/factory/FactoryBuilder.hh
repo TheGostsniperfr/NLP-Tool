@@ -15,13 +15,13 @@ class FactoryBuilder
 {
 private:
     string inputText;
-    list<PreMatchingModel> preMatchingModelList;
+    list<PreMatchingModel*> preMatchingModelList;
 public:
     FactoryBuilder(string inputText);
 
-    FactoryBuilder& addPreMatchingModel(const PreMatchingModel& preMatchingModel);
+    FactoryBuilder& addPreMatchingModel(PreMatchingModel* preMatchingModel);
 
-    Factory build() const;
+    Factory* build();
 };
 
 

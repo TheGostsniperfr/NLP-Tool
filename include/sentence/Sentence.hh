@@ -13,13 +13,11 @@ class Sentence
 {
 private:
     string inputText;
-    list<Token> tokenSentence;
+    list<Token*> tokenSentence;
 public:
-    Sentence();
-
     Sentence(string inputText);
 
-    string toString() const;
+    string toString();
 };
 
 

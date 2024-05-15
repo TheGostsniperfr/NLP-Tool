@@ -14,13 +14,13 @@ class FactoryBuilder;
 
 class Factory {
 private:
-    Sentence sentence;
-    list<PreMatchingModel> preMatchingModelList;
+    Sentence* sentence;
+    list<PreMatchingModel*> preMatchingModelList;
 
 public:
-    Factory(Sentence sentence, list<PreMatchingModel> preMatchingModelList);
+    Factory(Sentence* sentence, list<PreMatchingModel*> preMatchingModelList);
 
-    Sentence getSentence() const;
+    Sentence* getSentence();
 };
 
 

@@ -23,11 +23,11 @@ FactoryBuilder::FactoryBuilder(string inputText) {
     this->inputText = inputText;
 }
 
-FactoryBuilder& FactoryBuilder::addPreMatchingModel(const PreMatchingModel& preMatchingModel) {
+FactoryBuilder& FactoryBuilder::addPreMatchingModel(PreMatchingModel* preMatchingModel) {
     this->preMatchingModelList.push_back(preMatchingModel);
     return *this;
 }
 
-Factory FactoryBuilder::build() const {
-    return Factory(Sentence(this->inputText), this->preMatchingModelList);
+Factory* FactoryBuilder::build() {
+    return new Factory(new Sentence(this->inputText), this->preMatchingModelList);
 }
