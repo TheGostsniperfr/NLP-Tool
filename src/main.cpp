@@ -44,6 +44,8 @@ int main(int argc, char* argv[]) {
     string text = "Hello world ! I'm John. Is John's phone on the table?";
 
     FactoryBuilder* fb = new FactoryBuilder();
+    fb->withPosApi(new LaposApi());
+
     Factory* factory = fb->build();
     
     cout << factory->run(text)->toString();

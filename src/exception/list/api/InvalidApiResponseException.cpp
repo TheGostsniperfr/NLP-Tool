@@ -1,4 +1,4 @@
-#include "execption/list/api/InvalidApiResponseException.hh"
+#include "exception/list/api/InvalidApiResponseException.hh"
 
 InvalidApiResponseException::InvalidApiResponseException(const string& message)
     : BaseException(message) { }

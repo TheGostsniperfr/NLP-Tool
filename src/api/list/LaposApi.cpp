@@ -3,11 +3,14 @@
 
 
 
-LaposApi::LaposApi(Sentence* sentence, bool verbose) : PosApi(sentence, verbose) {
+LaposApi::LaposApi() : PosApi() {
     
 }
 
-void LaposApi::run() {
+void LaposApi::run(Sentence* sentence, bool verbose) {
+    this->sentence = sentence;
+    this->verbose = verbose;
+
     string out = getApiPOSTaggingResponse();
     
     

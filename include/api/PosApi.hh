@@ -10,8 +10,8 @@ protected:
     bool verbose;
     Sentence* sentence;
 public:
-    PosApi(Sentence* sentence, bool verbose);
-    virtual void run() = 0;
+    PosApi();
+    virtual void run(Sentence* sentence, bool verbose) = 0;
 };
 
 

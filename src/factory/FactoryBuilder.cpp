@@ -33,7 +33,7 @@ void FactoryBuilder::withPosApi(PosApi* posApi) {
 Factory* FactoryBuilder::build() {
     if(
         this->posApi == NULL
-        || this->preMatchingModelList.empty()
+        // || this->preMatchingModelList.empty()
     ) {
         throw InvalidFactoryBuilderParametersException();
     }

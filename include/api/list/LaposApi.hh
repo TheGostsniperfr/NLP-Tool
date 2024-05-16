@@ -23,8 +23,8 @@ private:
     string getApiPOSTaggingResponse();
     list<pair<string, PosTags>> getPosTagText(string text);
 public:
-    LaposApi(Sentence* sentence, bool verbose);
-    void run() override;
+    LaposApi();
+    void run(Sentence* sentence, bool verbose) override;
 };
 
 

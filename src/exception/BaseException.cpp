@@ -1,4 +1,4 @@
-#include "execption/BaseException.hh"
+#include "exception/BaseException.hh"
 
 BaseException::BaseException(const string& message) : message(message) { }
 
