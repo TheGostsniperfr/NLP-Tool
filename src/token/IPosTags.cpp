@@ -92,7 +92,7 @@ PosTagInfo getPosTagInfo(PosTags tag) {
     }
 }
 
-void printPosTagText(vector<pair<string, PosTags>> posTagText) {
+void printPosTagText(list<pair<string, PosTags>> posTagText) {
     for(pair<string, PosTags> e : posTagText) {
         cout << e.first << " | " << getPosTagInfo(e.second).tagName << endl;
     }

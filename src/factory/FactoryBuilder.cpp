@@ -23,11 +23,15 @@ FactoryBuilder::FactoryBuilder(string inputText) {
     this->inputText = inputText;
 }
 
-FactoryBuilder& FactoryBuilder::addPreMatchingModel(PreMatchingModel* preMatchingModel) {
+FactoryBuilder& FactoryBuilder::withPreMatchingModel(PreMatchingModel* preMatchingModel) {
     this->preMatchingModelList.push_back(preMatchingModel);
     return *this;
 }
 
+void FactoryBuilder::withPosApi(PosApi* posApi) {
+    this->posApi = posApi;
+}
+
 Factory* FactoryBuilder::build() {
-    return new Factory(new Sentence(this->inputText), this->preMatchingModelList);
+    return new Factory(new Sentence(this->inputText), this->posApi, this->preMatchingModelList);
 }

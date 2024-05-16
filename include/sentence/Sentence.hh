@@ -17,6 +17,8 @@ private:
 public:
     Sentence(string inputText);
 
+    list<Token*> getTokenSentence();
+
     string toString();
 };
 

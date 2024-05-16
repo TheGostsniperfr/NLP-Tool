@@ -1,7 +1,7 @@
 #include <iostream>
 #include <vector>
 
-#include "api/LaposApi.cpp"
+#include "api/list/LaposApi.hh"
 #include "factory/Factory.hh"
 #include "factory/FactoryBuilder.hh"
 
@@ -46,11 +46,9 @@ int main(int argc, char* argv[]) {
     
     cout << factory->getSentence()->toString();
 
-    // Transform textInput input in POS Tagging (via lapos)
-    // LaposApi* api = new LaposApi(textInput, verbose);
-    // api->run();
 
-    // // Free memory
+
+    // Free memory
     // delete api;
 
     return 0;

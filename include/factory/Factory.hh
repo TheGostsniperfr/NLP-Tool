@@ -3,6 +3,7 @@
 
 #include "sentence/Sentence.hh"
 #include "preMatching/PreMatchingModel.hh"
+#include "api/PosApi.hh"
 
 #include <string>
 #include <list>
@@ -15,12 +16,13 @@ class FactoryBuilder;
 class Factory {
 private:
     Sentence* sentence;
+    PosApi* posApi;
     list<PreMatchingModel*> preMatchingModelList;
 
 public:
-    Factory(Sentence* sentence, list<PreMatchingModel*> preMatchingModelList);
+    Factory(Sentence* sentence, PosApi* posApi, list<PreMatchingModel*> preMatchingModelList);
 
-    Sentence* getSentence();
+    Sentence* getSentence();    
 };
 
 

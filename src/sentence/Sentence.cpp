@@ -30,6 +30,10 @@ Sentence::Sentence(string inputText) {
     this->tokenSentence = parseText(this->inputText);
 }
 
+list<Token*> Sentence::getTokenSentence() {
+    return this->tokenSentence;
+}
+
 string Sentence::toString() {
     ostringstream oss;
     for(Token* token : this->tokenSentence) {

@@ -15,8 +15,9 @@
 
 #include "factory/Factory.hh"
 
-Factory::Factory(Sentence* sentence, list<PreMatchingModel*> preMatchingModelList) {
+Factory::Factory(Sentence* sentence, PosApi* posApi, list<PreMatchingModel*> preMatchingModelList) {
     this->sentence = sentence;
+    this->posApi = posApi;
     this->preMatchingModelList = preMatchingModelList;
 }
 
