@@ -6,6 +6,8 @@
 #include "sentence/Sentence.hh"
 #include "api/PosApi.hh"
 
+#include "exception/list/factory/InvalidFactoryBuilderParametersException.hh"
+
 #include <list>
 #include <string>
 
@@ -15,11 +17,10 @@ using namespace std;
 class FactoryBuilder
 {
 private:
-    string inputText;
     PosApi* posApi;
     list<PreMatchingModel*> preMatchingModelList;
 public:
-    FactoryBuilder(string inputText);
+    FactoryBuilder();
 
     FactoryBuilder& withPreMatchingModel(PreMatchingModel* preMatchingModel);
 

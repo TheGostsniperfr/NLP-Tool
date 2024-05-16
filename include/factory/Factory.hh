@@ -15,15 +15,13 @@ class FactoryBuilder;
 
 class Factory {
 private:
-    Sentence* sentence;
     PosApi* posApi;
     list<PreMatchingModel*> preMatchingModelList;
 
 public:
-    Factory(Sentence* sentence, PosApi* posApi, list<PreMatchingModel*> preMatchingModelList);
+    Factory(PosApi* posApi, list<PreMatchingModel*> preMatchingModelList);
 
-    Sentence* getSentence();    
+    Sentence* run(string inputText);
 };
-
 
 #endif

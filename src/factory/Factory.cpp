@@ -15,13 +15,13 @@
 
 #include "factory/Factory.hh"
 
-Factory::Factory(Sentence* sentence, PosApi* posApi, list<PreMatchingModel*> preMatchingModelList) {
-    this->sentence = sentence;
+Factory::Factory(PosApi* posApi, list<PreMatchingModel*> preMatchingModelList) {
     this->posApi = posApi;
     this->preMatchingModelList = preMatchingModelList;
 }
 
-Sentence* Factory::getSentence() {
-    return this->sentence;
+Sentence* Factory::run(string inputText) {
+    Sentence* sentence = new Sentence(inputText);
+    return sentence;
 }
 

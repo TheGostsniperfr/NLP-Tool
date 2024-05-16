@@ -67,7 +67,7 @@ string LaposApi::getApiPOSTaggingResponse() {
     if (pos_done != string::npos) {
         return out.substr(pos_done + 5);
     } else {
-        throw runtime_error("Invalid api response: Could not find 'done'.");
+        throw InvalidApiResponseException("Could not find 'done'.");
     }
 }
 

@@ -3,6 +3,7 @@
 
 #include "api/PosApi.hh"
 #include "token/IPosTags.hh"
+#include "exception/list/api/InvalidApiResponseException.hh"
 
 #include <list>
 #include <stdio.h>

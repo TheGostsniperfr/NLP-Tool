@@ -19,9 +19,7 @@
 
 using namespace std;
 
-FactoryBuilder::FactoryBuilder(string inputText) {
-    this->inputText = inputText;
-}
+FactoryBuilder::FactoryBuilder() { }
 
 FactoryBuilder& FactoryBuilder::withPreMatchingModel(PreMatchingModel* preMatchingModel) {
     this->preMatchingModelList.push_back(preMatchingModel);
@@ -33,5 +31,12 @@ void FactoryBuilder::withPosApi(PosApi* posApi) {
 }
 
 Factory* FactoryBuilder::build() {
-    return new Factory(new Sentence(this->inputText), this->posApi, this->preMatchingModelList);
+    if(
+        this->posApi == NULL
+        || this->preMatchingModelList.empty()
+    ) {
+        throw InvalidFactoryBuilderParametersException();
+    }
+
+    return new Factory(this->posApi, this->preMatchingModelList);
 }

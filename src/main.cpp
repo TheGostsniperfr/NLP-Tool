@@ -41,10 +41,12 @@ int main(int argc, char* argv[]) {
         return 0;
     }
 
-    FactoryBuilder* fb = new FactoryBuilder("Hello world ! I'm John. Is John's phone on the table?");
+    string text = "Hello world ! I'm John. Is John's phone on the table?";
+
+    FactoryBuilder* fb = new FactoryBuilder();
     Factory* factory = fb->build();
     
-    cout << factory->getSentence()->toString();
+    cout << factory->run(text)->toString();
 
 
 
