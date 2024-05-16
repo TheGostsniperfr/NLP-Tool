@@ -3,7 +3,7 @@
 
     Build the main factory:
 
-    addPreMatchingModel:
+    addPreMatchingModifier:
         - take a pre maching model
 
         - return this
@@ -21,8 +21,8 @@ using namespace std;
 
 FactoryBuilder::FactoryBuilder() { }
 
-FactoryBuilder& FactoryBuilder::withPreMatchingModel(PreMatchingModel* preMatchingModel) {
-    this->preMatchingModelList.push_back(preMatchingModel);
+FactoryBuilder& FactoryBuilder::withPreMatchingModifier(PreMatchingModifier* preMatchingModifier) {
+    this->preMatchingModifierList.push_back(preMatchingModifier);
     return *this;
 }
 
@@ -33,10 +33,10 @@ void FactoryBuilder::withPosApi(PosApi* posApi) {
 Factory* FactoryBuilder::build() {
     if(
         this->posApi == NULL
-        // || this->preMatchingModelList.empty()
+        // || this->preMatchingModifierList.empty()
     ) {
         throw InvalidFactoryBuilderParametersException();
     }
 
-    return new Factory(this->posApi, this->preMatchingModelList);
+    return new Factory(this->posApi, this->preMatchingModifierList);
 }

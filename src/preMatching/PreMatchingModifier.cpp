@@ -13,9 +13,9 @@
 
 */
 
-#include "preMatching/PreMatchingModel.hh"
+#include "preMatching/PreMatchingModifier.hh"
 
 
-PreMatchingModel::PreMatchingModel() {
+PreMatchingModifier::PreMatchingModifier() {
     
 }

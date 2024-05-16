@@ -2,7 +2,7 @@
 #define FACTORY_BUILDER_HH
 
 #include "factory/Factory.hh"
-#include "preMatching/PreMatchingModel.hh"
+#include "preMatching/PreMatchingModifier.hh"
 #include "sentence/Sentence.hh"
 #include "api/PosApi.hh"
 
@@ -18,11 +18,11 @@ class FactoryBuilder
 {
 private:
     PosApi* posApi;
-    list<PreMatchingModel*> preMatchingModelList;
+    list<PreMatchingModifier*> preMatchingModifierList;
 public:
     FactoryBuilder();
 
-    FactoryBuilder& withPreMatchingModel(PreMatchingModel* preMatchingModel);
+    FactoryBuilder& withPreMatchingModifier(PreMatchingModifier* PreMatchingModifier);
 
     void withPosApi(PosApi* posApi);
 

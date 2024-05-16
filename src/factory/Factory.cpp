@@ -15,9 +15,9 @@
 
 #include "factory/Factory.hh"
 
-Factory::Factory(PosApi* posApi, list<PreMatchingModel*> preMatchingModelList) {
+Factory::Factory(PosApi* posApi, list<PreMatchingModifier*> preMatchingModifierList) {
     this->posApi = posApi;
-    this->preMatchingModelList = preMatchingModelList;
+    this->preMatchingModifierList = preMatchingModifierList;
 }
 
 Sentence* Factory::run(string inputText) {

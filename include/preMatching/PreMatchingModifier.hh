@@ -1,11 +1,11 @@
 #ifndef PRE_MATCHING_MODEL_H
 #define PRE_MATCHING_MODEL_H
 
-class PreMatchingModel
+class PreMatchingModifier
 {
 private:
 public:
-    PreMatchingModel();
+    PreMatchingModifier();
 };
 
 #endif

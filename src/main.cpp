@@ -45,6 +45,7 @@ int main(int argc, char* argv[]) {
 
     FactoryBuilder* fb = new FactoryBuilder();
     fb->withPosApi(new LaposApi());
+    
 
     Factory* factory = fb->build();
     
