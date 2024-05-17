@@ -21,6 +21,11 @@ struct PosTagInfo
 enum PosTags
 {
     NONE,
+    URL,
+    GPS,
+    DATE,
+    SPACE,
+
     CC, // conjunction, coordinating
     CD, // numeral, cardinal
     DT, // Determiner

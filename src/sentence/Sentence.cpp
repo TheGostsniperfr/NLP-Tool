@@ -37,7 +37,7 @@ list<Token*>& Sentence::getTokenSentence() {
 string Sentence::toString() {
     ostringstream oss;
     for(Token* token : this->tokenSentence) {
-        oss << token->getOriginalString() << " ";
+        oss << token->getOriginalString();
     }
 
     oss << endl;
@@ -47,27 +47,27 @@ string Sentence::toString() {
 string Sentence::toStringPosProcess() {
     ostringstream oss;
     for(Token* token : this->tokenSentence) {
-        oss << token->getPostProcessingString() << " ";
+        oss << token->getPostProcessingString();
     }
 
     oss << endl;
     return oss.str();
 }
 
-string Sentence::toStringWithWordId() {
+string Sentence::toStringWithDebug() {
     ostringstream oss;
     for(Token* token : this->tokenSentence) {
-        oss << "(" << token->getWordId() << ")[" << token->getOriginalString() << "] ";
+        oss << "(" << token->getWordId() << ")[" << token->getOriginalString() << "]";
     }
 
     oss << endl;
     return oss.str();
 }
 
-string Sentence::toStringPosProcessWithWordId() {
+string Sentence::toStringPosProcessWithDebug() {
     ostringstream oss;
     for(Token* token : this->tokenSentence) {
-        oss << "(" << token->getWordId() << ")[" << token->getPostProcessingString() << "] ";
+        oss << "(" << token->getWordId() << "|" << getPosTagInfo(token->getPosTag()).tagName << ")[" << token->getPostProcessingString() << "]";
     }
 
     oss << endl;

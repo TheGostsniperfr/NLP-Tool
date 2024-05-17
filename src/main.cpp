@@ -6,6 +6,7 @@
 #include "factory/FactoryBuilder.hh"
 
 #include "preMatching/list/ContractionModifier.hh"
+#include "preMatching/list/UrlModifier.hh"
 
 using namespace std;
 
@@ -43,11 +44,12 @@ int main(int argc, char* argv[]) {
         return 0;
     }
 
-    string text = "Hey, y'all, I'm gonna go to the store 'cause I need some groceries. Could've gone yesterday, but didn't have time. Ain't it funny how things work out sometimes?";
+    string text = "My url is: https://www.youtube.com/watch?v=Ze_mWpklkKQ.Hey, y'all, I'm gonna go to the store 'cause I need some groceries. Could've gone yesterday, but didn't have time. Ain't it funny how things work out sometimes?";
 
     FactoryBuilder* fb = new FactoryBuilder();
     fb->withPosApi(new LaposApi());
     fb->withPreMatchingModifier(new ContractionModifier());
+    fb->withPreMatchingModifier(new UrlModifier());
 
     Factory* factory = fb->build();
 
@@ -56,8 +58,8 @@ int main(int argc, char* argv[]) {
     cout << sentence->toString() << endl;
     cout << sentence->toStringPosProcess() << endl;
 
-    cout << sentence->toStringWithWordId() << endl;
-    cout << sentence->toStringPosProcessWithWordId();
+    cout << sentence->toStringWithDebug() << endl;
+    cout << sentence->toStringPosProcessWithDebug();
 
     // Free memory
     // delete api;

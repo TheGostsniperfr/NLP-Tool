@@ -32,7 +32,9 @@ void LaposApi::run(Sentence* sentence, bool verbose) {
     auto tagsIterator = tags.begin();
 
     for(Token* token : this->sentence->getTokenSentence()) {
-        token->setPosTag(tagsIterator->second);
+        if(token->getPosTag() != NONE) {
+            token->setPosTag(tagsIterator->second);
+        }
         ++tagsIterator;
     } 
 }

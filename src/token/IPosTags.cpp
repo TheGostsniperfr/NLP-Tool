@@ -3,6 +3,10 @@
 PosTags getPosTagFromToken(const string& tag) {
     static const unordered_map<string, PosTags> tagToTokenMap = {
         {"None", PosTags::NONE},
+        {"URL", PosTags::URL},
+        {"GPS", PosTags::GPS},
+        {"DATE", PosTags::DATE},
+        {"SPACE", PosTags::SPACE},
         {"CC", PosTags::CC},
         {"CD", PosTags::CD},
         {"DT", PosTags::DT},
@@ -48,7 +52,12 @@ PosTags getPosTagFromToken(const string& tag) {
 
 PosTagInfo getPosTagInfo(PosTags tag) {
     const unordered_map<PosTags, PosTagInfo> posTagDescriptions = {
-        {PosTags::CC, {"NONE", "Pos Tag not defind"}},
+        {PosTags::NONE, {"NONE", "Pos Tag not defind"}},
+        {PosTags::URL, {"URL", "Url"}},
+        {PosTags::GPS, {"GPS", "Gps coordinate"}},
+        {PosTags::DATE, {"DATE", "Date"}},
+        {PosTags::SPACE, {"SPACE", "Space"}},
+        
         {PosTags::CC, {"CC", "Conjunction, Coordinating"}},
         {PosTags::CD, {"CD", "Numeral, Cardinal"}},
         {PosTags::DT, {"DT", "Determiner"}},
@@ -88,7 +97,7 @@ PosTagInfo getPosTagInfo(PosTags tag) {
     if (it != posTagDescriptions.end()) {
         return it->second; 
     } else {
-        throw invalid_argument("Unknown PosTag");
+        throw invalid_argument("Unknown PosTag: " + tag);
     }
 }
 

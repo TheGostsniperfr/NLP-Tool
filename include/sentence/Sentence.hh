@@ -22,8 +22,8 @@ public:
     string toString();
     string toStringPosProcess();
 
-    string toStringWithWordId();
-    string toStringPosProcessWithWordId();
+    string toStringWithDebug();
+    string toStringPosProcessWithDebug();
 };
 
 

@@ -218,6 +218,13 @@ void ContractionModifier::run(Sentence* sentence, bool verbose) {
                     newToken->setPosProcessingString(newWord);
                     
                     insertPos = sentence->getTokenSentence().insert(++insertPos, newToken);
+
+                    if(&newWord != &resp.back()) {
+                        Token* spaceToken = new Token(" ", token->getWordId());
+                        spaceToken->setPosTag(SPACE);
+                        insertPos = sentence->getTokenSentence().insert(++insertPos, spaceToken);
+                    }
+
                 }
                 it = sentence->getTokenSentence().erase(it);
                 continue;

@@ -36,6 +36,8 @@ public:
 
     void setPosTag(PosTags posTag); 
 
+    void setPosTagWithOverWrite(PosTags posTag); 
+
     int getWordId();
 
     void setWordId(int newWordId);

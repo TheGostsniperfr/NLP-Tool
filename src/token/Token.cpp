@@ -59,6 +59,12 @@ string Token::getPosTagDescription() {
 }
 
 void Token::setPosTag(PosTags posTag) {
+    if(this->posTag == NONE) {
+        this->posTag = posTag;
+    }
+}
+
+void Token::setPosTagWithOverWrite(PosTags posTag) {
     this->posTag = posTag;
 }
 
