@@ -53,3 +53,23 @@ string Sentence::toStringPosProcess() {
     oss << endl;
     return oss.str();
 }
+
+string Sentence::toStringWithWordId() {
+    ostringstream oss;
+    for(Token* token : this->tokenSentence) {
+        oss << "(" << token->getWordId() << ")[" << token->getOriginalString() << "] ";
+    }
+
+    oss << endl;
+    return oss.str();
+}
+
+string Sentence::toStringPosProcessWithWordId() {
+    ostringstream oss;
+    for(Token* token : this->tokenSentence) {
+        oss << "(" << token->getWordId() << ")[" << token->getPostProcessingString() << "] ";
+    }
+
+    oss << endl;
+    return oss.str();
+}

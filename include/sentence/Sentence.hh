@@ -20,8 +20,10 @@ public:
     list<Token*>& getTokenSentence();
 
     string toString();
-
     string toStringPosProcess();
+
+    string toStringWithWordId();
+    string toStringPosProcessWithWordId();
 };
 
 

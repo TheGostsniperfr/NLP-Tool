@@ -17,8 +17,9 @@
 
 
 
-Token::Token(string originalString) {
+Token::Token(string originalString, int wordId) {
     this->originalString = originalString;
+    this->wordId = wordId;
 
     this->postProcessingString = originalString;
     transform(this->postProcessingString.begin(), this->postProcessingString.end(), this->postProcessingString.begin(), ::tolower);
@@ -28,6 +29,7 @@ Token::Token(string originalString) {
 
 Token::Token(Token* token) {
     this->originalString = token->getOriginalString();
+    this->wordId = token->wordId;
     this->postProcessingString = token->getPostProcessingString();
     this->posTag = token->posTag;    
 }
@@ -58,5 +60,13 @@ string Token::getPosTagDescription() {
 
 void Token::setPosTag(PosTags posTag) {
     this->posTag = posTag;
+}
+
+int Token::getWordId() {
+    return this->wordId;
+}
+
+void Token::setWordId(int newWordId) {
+    this->wordId = newWordId;
 }
 

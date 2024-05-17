@@ -13,11 +13,12 @@ using namespace std;
 class Token
 {
 private:
+    int wordId; // To match with the original word
     string originalString;
     string postProcessingString;
     PosTags posTag;
 public:
-    Token(string originalString);
+    Token(string originalString, int wordId);
 
     Token(Token* token);
 
@@ -34,6 +35,10 @@ public:
     string getPosTagDescription();
 
     void setPosTag(PosTags posTag); 
+
+    int getWordId();
+
+    void setWordId(int newWordId);
 };
 
 #endif

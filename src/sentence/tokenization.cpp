@@ -7,8 +7,10 @@ list<Token*> parseText(const string& text) {
     sregex_iterator iter(text.begin(), text.end(), wordRegex);
     sregex_iterator end;
 
+    int wordId = 0;
+
     while(iter != end) {
-        tokenList.push_back(new Token((*(iter++)).str()));
+        tokenList.push_back(new Token((*(iter++)).str(), wordId++));
     }
 
     return tokenList;

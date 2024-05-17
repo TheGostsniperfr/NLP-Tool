@@ -43,21 +43,21 @@ int main(int argc, char* argv[]) {
         return 0;
     }
 
-    string text = "Hello world ! I'm John. Is John's phone who'd on the table?";
+    string text = "Hey, y'all, I'm gonna go to the store 'cause I need some groceries. Could've gone yesterday, but didn't have time. Ain't it funny how things work out sometimes?";
 
     FactoryBuilder* fb = new FactoryBuilder();
     fb->withPosApi(new LaposApi());
     fb->withPreMatchingModifier(new ContractionModifier());
+
     Factory* factory = fb->build();
-    
+
     Sentence* sentence = factory->run(text, verbose);
 
-    cout << sentence->toString();
-    cout << sentence->toStringPosProcess();
+    cout << sentence->toString() << endl;
+    cout << sentence->toStringPosProcess() << endl;
 
-    
-
-
+    cout << sentence->toStringWithWordId() << endl;
+    cout << sentence->toStringPosProcessWithWordId();
 
     // Free memory
     // delete api;
