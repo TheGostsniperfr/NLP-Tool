@@ -7,6 +7,7 @@
 
 #include "preMatching/list/ContractionModifier.hh"
 #include "preMatching/list/UrlModifier.hh"
+#include "preMatching/list/PonctModifier.hh"
 
 using namespace std;
 
@@ -50,6 +51,7 @@ int main(int argc, char* argv[]) {
     fb->withPosApi(new LaposApi());
     fb->withPreMatchingModifier(new ContractionModifier());
     fb->withPreMatchingModifier(new UrlModifier());
+    fb->withPreMatchingModifier(new PonctModifier());
 
     Factory* factory = fb->build();
 
