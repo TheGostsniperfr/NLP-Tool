@@ -19,9 +19,18 @@
 
 Token::Token(string originalString) {
     this->originalString = originalString;
-    this->postProcessingString = "Not defind";
+
+    this->postProcessingString = originalString;
+    transform(this->postProcessingString.begin(), this->postProcessingString.end(), this->postProcessingString.begin(), ::tolower);
+    
     this->posTag = NONE;
 };
+
+Token::Token(Token* token) {
+    this->originalString = token->getOriginalString();
+    this->postProcessingString = token->getPostProcessingString();
+    this->posTag = token->posTag;    
+}
 
 string Token::getOriginalString() {
     return this->originalString;

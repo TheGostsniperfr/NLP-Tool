@@ -4,6 +4,8 @@
 #include "token/IPosTags.hh"
 
 #include <string>
+#include <algorithm>
+#include <cctype>
 
 using namespace std;
 
@@ -16,6 +18,8 @@ private:
     PosTags posTag;
 public:
     Token(string originalString);
+
+    Token(Token* token);
 
     string getOriginalString();
 

@@ -24,7 +24,7 @@ public:
 
     FactoryBuilder& withPreMatchingModifier(PreMatchingModifier* PreMatchingModifier);
 
-    void withPosApi(PosApi* posApi);
+    FactoryBuilder& withPosApi(PosApi* posApi);
 
     Factory* build();
 };

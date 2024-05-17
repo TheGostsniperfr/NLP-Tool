@@ -26,8 +26,9 @@ FactoryBuilder& FactoryBuilder::withPreMatchingModifier(PreMatchingModifier* pre
     return *this;
 }
 
-void FactoryBuilder::withPosApi(PosApi* posApi) {
+FactoryBuilder& FactoryBuilder::withPosApi(PosApi* posApi) {
     this->posApi = posApi;
+    return *this;
 }
 
 Factory* FactoryBuilder::build() {

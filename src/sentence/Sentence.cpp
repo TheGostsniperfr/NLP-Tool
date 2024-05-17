@@ -30,7 +30,7 @@ Sentence::Sentence(string inputText) {
     this->tokenSentence = parseText(this->inputText);
 }
 
-list<Token*> Sentence::getTokenSentence() {
+list<Token*>& Sentence::getTokenSentence() {
     return this->tokenSentence;
 }
 
@@ -38,6 +38,16 @@ string Sentence::toString() {
     ostringstream oss;
     for(Token* token : this->tokenSentence) {
         oss << token->getOriginalString() << " ";
+    }
+
+    oss << endl;
+    return oss.str();
+}
+
+string Sentence::toStringPosProcess() {
+    ostringstream oss;
+    for(Token* token : this->tokenSentence) {
+        oss << token->getPostProcessingString() << " ";
     }
 
     oss << endl;

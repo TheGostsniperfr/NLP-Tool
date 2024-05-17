@@ -20,8 +20,14 @@ Factory::Factory(PosApi* posApi, list<PreMatchingModifier*> preMatchingModifierL
     this->preMatchingModifierList = preMatchingModifierList;
 }
 
-Sentence* Factory::run(string inputText) {
+Sentence* Factory::run(string inputText, bool verbose) {
     Sentence* sentence = new Sentence(inputText);
+
+    // Apply modifiers
+    for(PreMatchingModifier* modifier : this->preMatchingModifierList) {
+        modifier->run(sentence, verbose);
+    }
+
     return sentence;
 }
 

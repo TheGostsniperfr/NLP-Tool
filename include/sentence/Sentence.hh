@@ -17,9 +17,11 @@ private:
 public:
     Sentence(string inputText);
 
-    list<Token*> getTokenSentence();
+    list<Token*>& getTokenSentence();
 
     string toString();
+
+    string toStringPosProcess();
 };
 
 

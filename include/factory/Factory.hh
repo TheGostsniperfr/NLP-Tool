@@ -21,7 +21,7 @@ private:
 public:
     Factory(PosApi* posApi, list<PreMatchingModifier*> preMatchingModifierList);
 
-    Sentence* run(string inputText);
+    Sentence* run(string inputText, bool verbose);
 };
 
 #endif

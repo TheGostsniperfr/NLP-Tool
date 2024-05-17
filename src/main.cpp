@@ -5,6 +5,8 @@
 #include "factory/Factory.hh"
 #include "factory/FactoryBuilder.hh"
 
+#include "preMatching/list/ContractionModifier.hh"
+
 using namespace std;
 
 void printHelp() {
@@ -41,15 +43,19 @@ int main(int argc, char* argv[]) {
         return 0;
     }
 
-    string text = "Hello world ! I'm John. Is John's phone on the table?";
+    string text = "Hello world ! I'm John. Is John's phone who'd on the table?";
 
     FactoryBuilder* fb = new FactoryBuilder();
     fb->withPosApi(new LaposApi());
-    
-
+    fb->withPreMatchingModifier(new ContractionModifier());
     Factory* factory = fb->build();
     
-    cout << factory->run(text)->toString();
+    Sentence* sentence = factory->run(text, verbose);
+
+    cout << sentence->toString();
+    cout << sentence->toStringPosProcess();
+
+    
 
 
 
