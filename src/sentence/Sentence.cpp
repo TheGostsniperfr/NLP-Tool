@@ -30,6 +30,12 @@ Sentence::Sentence(string inputText) {
     this->tokenSentence = parseText(this->inputText);
 }
 
+Sentence::~Sentence() {
+    for(Token* token : this->tokenSentence) {
+        delete token;
+    }
+}
+
 list<Token*>& Sentence::getTokenSentence() {
     return this->tokenSentence;
 }

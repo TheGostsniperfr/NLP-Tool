@@ -45,8 +45,6 @@ int main(int argc, char* argv[]) {
         return 0;
     }
 
-    string text = "My url is: https://www.youtube.com/watch?v=Ze_mWpklkKQ.Hey, y'all, I'm gonna go to the store 'cause I need some groceries. Could've gone yesterday, but didn't have time. Ain't it funny how things work out sometimes?";
-
     FactoryBuilder* fb = new FactoryBuilder();
     fb->withPreMatchingModifier(new ContractionModifier());
     fb->withPreMatchingModifier(new UrlModifier());
@@ -55,7 +53,7 @@ int main(int argc, char* argv[]) {
 
     Factory* factory = fb->build();
 
-    Sentence* sentence = factory->run(text, verbose);
+    Sentence* sentence = factory->run(textInput, verbose);
 
     cout << sentence->toString() << endl;
     cout << sentence->toStringPosProcess() << endl;
@@ -64,7 +62,9 @@ int main(int argc, char* argv[]) {
     cout << sentence->toStringPosProcessWithDebug();
 
     // Free memory
-    // delete api;
+    delete fb;
+    delete factory;
+    delete sentence;
 
     return 0;
 }

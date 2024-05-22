@@ -8,6 +8,8 @@ class UrlModifier : public PreMatchingModifier
 private:
 public:
     UrlModifier();
+    ~UrlModifier() override;
+
     void run(Sentence* sentence, bool verbose) override;
 };
 

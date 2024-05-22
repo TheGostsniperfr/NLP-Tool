@@ -1,9 +1,9 @@
 
 #include "preMatching/list/LaposApiModifier.hh"
 
-LaposApiModifier::LaposApiModifier() {
+LaposApiModifier::LaposApiModifier() { }
 
-}
+LaposApiModifier::~LaposApiModifier() { }
 
 void LaposApiModifier::run(Sentence* sentence, bool verbose) {
     string out = getApiPOSTaggingResponse(sentence);

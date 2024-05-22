@@ -16,6 +16,7 @@ private:
     list<Token*> tokenSentence;
 public:
     Sentence(string inputText);
+    ~Sentence();
 
     list<Token*>& getTokenSentence();
 

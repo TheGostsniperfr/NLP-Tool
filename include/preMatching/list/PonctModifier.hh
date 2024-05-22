@@ -9,6 +9,8 @@ class PonctModifier : public PreMatchingModifier
 private:
 public:
     PonctModifier();
+    ~PonctModifier() override;
+
     void run(Sentence* sentence, bool verbose) override;
 };
 

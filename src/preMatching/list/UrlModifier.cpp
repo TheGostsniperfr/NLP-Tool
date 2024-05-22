@@ -2,6 +2,8 @@
 
 UrlModifier::UrlModifier() { }
 
+UrlModifier::~UrlModifier() { }
+
 void UrlModifier::run(Sentence* sentence, bool verbose) {
     bool urlDetected = false;
     

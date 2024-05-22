@@ -34,6 +34,8 @@ Token::Token(Token* token) {
     this->posTag = token->posTag;    
 }
 
+Token::~Token() { }
+
 string Token::getOriginalString() {
     return this->originalString;
 }

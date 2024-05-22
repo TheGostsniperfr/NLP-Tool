@@ -8,6 +8,7 @@ class ContractionModifier : public PreMatchingModifier
 private:
 public:
     ContractionModifier();
+    ~ContractionModifier() override;
     void run(Sentence* sentence, bool verbose) override;
 };
 

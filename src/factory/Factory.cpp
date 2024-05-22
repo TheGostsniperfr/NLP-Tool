@@ -19,6 +19,12 @@ Factory::Factory(list<PreMatchingModifier*> preMatchingModifierList) {
     this->preMatchingModifierList = preMatchingModifierList;
 }
 
+Factory::~Factory() { 
+    for(PreMatchingModifier* modifier : this->preMatchingModifierList) {
+        delete modifier;
+    }
+}
+
 Sentence* Factory::run(string inputText, bool verbose) {
     Sentence* sentence = new Sentence(inputText);
 

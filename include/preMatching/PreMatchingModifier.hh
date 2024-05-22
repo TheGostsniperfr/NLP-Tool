@@ -10,6 +10,7 @@ class PreMatchingModifier
 private:
 public:
     PreMatchingModifier();
+    virtual ~PreMatchingModifier();
     virtual void run(Sentence* sentence, bool verbose) = 0;
 };
 

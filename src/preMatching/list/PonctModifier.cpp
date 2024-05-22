@@ -2,6 +2,8 @@
 
 PonctModifier::PonctModifier() { }
 
+PonctModifier::~PonctModifier() { }
+
 void PonctModifier::run(Sentence* sentence, bool verbose) {
     regex pattern("[.,;:!?]");
 

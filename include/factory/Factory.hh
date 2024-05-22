@@ -18,6 +18,7 @@ private:
 
 public:
     Factory(list<PreMatchingModifier*> preMatchingModifierList);
+    ~Factory();
 
     Sentence* run(string inputText, bool verbose);
 };

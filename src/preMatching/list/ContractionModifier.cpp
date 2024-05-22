@@ -2,6 +2,8 @@
 
 ContractionModifier::ContractionModifier() { }
 
+ContractionModifier::~ContractionModifier() { }
+
 // https://en.wikipedia.org/wiki/Wikipedia:List_of_English_contractions
 vector<string> removeContraction(const string& word) {
     static const unordered_map<string, vector<string>> contractionsMap = {
@@ -227,6 +229,7 @@ void ContractionModifier::run(Sentence* sentence, bool verbose) {
                     }
 
                 }
+                delete *it;
                 it = sentence->getTokenSentence().erase(it);
                 continue;
             }

@@ -22,6 +22,8 @@ public:
 
     Token(Token* token);
 
+    ~Token();
+
     string getOriginalString();
 
     string getPostProcessingString();

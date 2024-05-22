@@ -25,6 +25,8 @@ private:
     list<pair<string, PosTags>> getPosTagText(string text);
 public:
     LaposApiModifier();
+    ~LaposApiModifier() override;
+
     void run(Sentence* sentence, bool verbose) override;
 };
 
