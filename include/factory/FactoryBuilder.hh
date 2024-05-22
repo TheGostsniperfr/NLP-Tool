@@ -4,7 +4,6 @@
 #include "factory/Factory.hh"
 #include "preMatching/PreMatchingModifier.hh"
 #include "sentence/Sentence.hh"
-#include "api/PosApi.hh"
 
 #include "exception/list/factory/InvalidFactoryBuilderParametersException.hh"
 
@@ -17,14 +16,11 @@ using namespace std;
 class FactoryBuilder
 {
 private:
-    PosApi* posApi;
     list<PreMatchingModifier*> preMatchingModifierList;
 public:
     FactoryBuilder();
 
     FactoryBuilder& withPreMatchingModifier(PreMatchingModifier* PreMatchingModifier);
-
-    FactoryBuilder& withPosApi(PosApi* posApi);
 
     Factory* build();
 };

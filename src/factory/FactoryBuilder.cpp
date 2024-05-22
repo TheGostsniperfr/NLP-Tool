@@ -26,18 +26,10 @@ FactoryBuilder& FactoryBuilder::withPreMatchingModifier(PreMatchingModifier* pre
     return *this;
 }
 
-FactoryBuilder& FactoryBuilder::withPosApi(PosApi* posApi) {
-    this->posApi = posApi;
-    return *this;
-}
-
 Factory* FactoryBuilder::build() {
-    if(
-        this->posApi == NULL
-        // || this->preMatchingModifierList.empty()
-    ) {
-        throw InvalidFactoryBuilderParametersException();
-    }
+    // if(this->preMatchingModifierList.empty()) {
+    //     throw InvalidFactoryBuilderParametersException();
+    // }
 
-    return new Factory(this->posApi, this->preMatchingModifierList);
+    return new Factory(this->preMatchingModifierList);
 }

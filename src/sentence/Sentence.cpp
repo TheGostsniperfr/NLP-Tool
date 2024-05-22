@@ -54,6 +54,18 @@ string Sentence::toStringPosProcess() {
     return oss.str();
 }
 
+string Sentence::toStringFakeSpace() {
+    ostringstream oss;
+    for(Token* token : this->tokenSentence) {
+        if(token->getPosTag() != SPACE) {
+            oss << token->getPostProcessingString() << " ";
+        }
+    }
+
+    oss << endl;
+    return oss.str();
+}
+
 string Sentence::toStringWithDebug() {
     ostringstream oss;
     for(Token* token : this->tokenSentence) {
@@ -67,7 +79,10 @@ string Sentence::toStringWithDebug() {
 string Sentence::toStringPosProcessWithDebug() {
     ostringstream oss;
     for(Token* token : this->tokenSentence) {
-        oss << "(" << token->getWordId() << "|" << getPosTagInfo(token->getPosTag()).tagName << ")[" << token->getPostProcessingString() << "]";
+        // oss << "(" << token->getWordId() << "|" << getPosTagInfo(token->getPosTag()).tagName << ")[" << token->getPostProcessingString() << "]";
+        if(token->getPosTag() != SPACE) {
+            oss << token->getPostProcessingString() << "/" << getPosTagInfo(token->getPosTag()).tagName << " ";
+        }
     }
 
     oss << endl;

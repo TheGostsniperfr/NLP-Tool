@@ -3,7 +3,6 @@
 
 #include "sentence/Sentence.hh"
 #include "preMatching/PreMatchingModifier.hh"
-#include "api/PosApi.hh"
 
 #include <string>
 #include <list>
@@ -15,11 +14,10 @@ class FactoryBuilder;
 
 class Factory {
 private:
-    PosApi* posApi;
     list<PreMatchingModifier*> preMatchingModifierList;
 
 public:
-    Factory(PosApi* posApi, list<PreMatchingModifier*> preMatchingModifierList);
+    Factory(list<PreMatchingModifier*> preMatchingModifierList);
 
     Sentence* run(string inputText, bool verbose);
 };

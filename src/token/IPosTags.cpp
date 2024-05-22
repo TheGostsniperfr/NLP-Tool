@@ -23,7 +23,7 @@ PosTags getPosTagFromToken(const string& tag) {
         {"PDT", PosTags::PDT},
         {"POS", PosTags::POS},
         {"PRP", PosTags::PRP},
-        {"PPP$", PosTags::PPP$},
+        {"PRP$", PosTags::PRP$},
         {"RB", PosTags::RB},
         {"RBR", PosTags::RBR},
         {"RBS", PosTags::RBS},
@@ -46,7 +46,8 @@ PosTags getPosTagFromToken(const string& tag) {
     if (it != tagToTokenMap.end()) {
         return it->second; 
     } else {
-        throw invalid_argument("Unknown tag: |" + tag + "|"); 
+        // throw invalid_argument("Unknown tag: |" + tag + "|"); 
+        return NONE;
     }
 }
 
@@ -74,7 +75,7 @@ PosTagInfo getPosTagInfo(PosTags tag) {
         {PosTags::PDT, {"PDT", "Pre-Determiner"}},
         {PosTags::POS, {"POS", "Genitive Marker"}},
         {PosTags::PRP, {"PRP", "Pronoun, Personal"}},
-        {PosTags::PPP$, {"PPP$", "Pronoun, Possessive"}},
+        {PosTags::PRP$, {"PRP$", "Pronoun, Possessive"}},
         {PosTags::RB, {"RB", "Adverb"}},
         {PosTags::RBR, {"RBR", "Adverb"}},
         {PosTags::RBS, {"RBS", "Adverb, Superlative"}},

@@ -1,13 +1,13 @@
 #include <iostream>
 #include <vector>
 
-#include "api/list/LaposApi.hh"
 #include "factory/Factory.hh"
 #include "factory/FactoryBuilder.hh"
 
 #include "preMatching/list/ContractionModifier.hh"
 #include "preMatching/list/UrlModifier.hh"
 #include "preMatching/list/PonctModifier.hh"
+#include "preMatching/list/LaposApiModifier.hh"
 
 using namespace std;
 
@@ -48,10 +48,10 @@ int main(int argc, char* argv[]) {
     string text = "My url is: https://www.youtube.com/watch?v=Ze_mWpklkKQ.Hey, y'all, I'm gonna go to the store 'cause I need some groceries. Could've gone yesterday, but didn't have time. Ain't it funny how things work out sometimes?";
 
     FactoryBuilder* fb = new FactoryBuilder();
-    fb->withPosApi(new LaposApi());
     fb->withPreMatchingModifier(new ContractionModifier());
     fb->withPreMatchingModifier(new UrlModifier());
     fb->withPreMatchingModifier(new PonctModifier());
+    fb->withPreMatchingModifier(new LaposApiModifier());
 
     Factory* factory = fb->build();
 

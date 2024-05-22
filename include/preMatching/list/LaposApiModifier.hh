@@ -1,7 +1,8 @@
-#ifndef LAPOS_API_HH
-#define LAPOS_API_HH
+#ifndef LAPOS_API_MODIFIER_HH
+#define LAPOS_API_MODIFIER_HH
 
-#include "api/PosApi.hh"
+#include "preMatching/PreMatchingModifier.hh"
+
 #include "token/IPosTags.hh"
 #include "exception/list/api/InvalidApiResponseException.hh"
 
@@ -16,14 +17,14 @@
 
 using namespace std;
 
-class LaposApi : public PosApi {
+class LaposApiModifier : public PreMatchingModifier {
 private:
     string exec(const char* cmd);
     string getPosTagCmd(string text);
-    string getApiPOSTaggingResponse();
+    string getApiPOSTaggingResponse(Sentence* sentence);
     list<pair<string, PosTags>> getPosTagText(string text);
 public:
-    LaposApi();
+    LaposApiModifier();
     void run(Sentence* sentence, bool verbose) override;
 };
 

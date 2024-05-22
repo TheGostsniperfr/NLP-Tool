@@ -42,7 +42,7 @@ enum PosTags
     PDT, // pre-determiner
     POS, // genitive marker
     PRP, // pronoun, personal
-    PPP$, // pronoun, possessive
+    PRP$, // pronoun, possessive
     RB, // adverb
     RBR, // adverb
     RBS, // adverb, superlative

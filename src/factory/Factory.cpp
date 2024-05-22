@@ -15,8 +15,7 @@
 
 #include "factory/Factory.hh"
 
-Factory::Factory(PosApi* posApi, list<PreMatchingModifier*> preMatchingModifierList) {
-    this->posApi = posApi;
+Factory::Factory(list<PreMatchingModifier*> preMatchingModifierList) {
     this->preMatchingModifierList = preMatchingModifierList;
 }
 

@@ -1,47 +1,38 @@
 
-#include "api/list/LaposApi.hh"
+#include "preMatching/list/LaposApiModifier.hh"
 
+LaposApiModifier::LaposApiModifier() {
 
-
-LaposApi::LaposApi() : PosApi() {
-    
 }
 
-void LaposApi::run(Sentence* sentence, bool verbose) {
-    this->sentence = sentence;
-    this->verbose = verbose;
-
-    string out = getApiPOSTaggingResponse();
-    
-    
-
-    if(this->verbose) {
-        cout << "Lapos API out: " + out << endl;
-    }
+void LaposApiModifier::run(Sentence* sentence, bool verbose) {
+    string out = getApiPOSTaggingResponse(sentence);
 
     list<pair<string, PosTags>> tags = getPosTagText(out);
 
-    if(this->verbose) {
+    if(verbose) {
         printPosTagText(tags);
-    }
-
-    if(this->sentence->getTokenSentence().size() != tags.size()) {
-        throw runtime_error("Differents size of sentence tokens and tags found!");
     }
 
     auto tagsIterator = tags.begin();
 
-    for(Token* token : this->sentence->getTokenSentence()) {
-        if(token->getPosTag() != NONE) {
-            token->setPosTag(tagsIterator->second);
+    for(Token* token : sentence->getTokenSentence()) {
+        if(token->getPosTag() != SPACE) {
+            if(token->getPosTag() == NONE) {
+                token->setPosTag(tagsIterator->second);
+            }
+            ++tagsIterator;
         }
-        ++tagsIterator;
+
+        if(tagsIterator == tags.end()) {
+            return;
+        }
     } 
 }
 
 
 
-string LaposApi::exec(const char* cmd) {
+string LaposApiModifier::exec(const char* cmd) {
     char buffer[128];
     string result = "";
     shared_ptr<FILE> pipe(popen(cmd, "r"), pclose);
@@ -61,12 +52,14 @@ string LaposApi::exec(const char* cmd) {
     return result;
 }
 
-string LaposApi::getPosTagCmd(string text) {
-    return "echo " + text + "| ./lapos-0.1.2/lapos -t -m ./lapos-0.1.2/model_big/";
+string LaposApiModifier::getPosTagCmd(string text) {
+    return "echo \"" + text + "\"| ./lapos-0.1.2/lapos -m ./lapos-0.1.2/model_big/";
 }
 
-string LaposApi::getApiPOSTaggingResponse() {
-    string out = exec(getPosTagCmd(this->sentence->toString()).c_str());
+string LaposApiModifier::getApiPOSTaggingResponse(Sentence* sentence) {
+    string out = exec(getPosTagCmd(sentence->toStringFakeSpace()).c_str());
+
+    cout << "out: " + out << endl;
 
     size_t pos_done = out.find("done");
     if (pos_done != string::npos) {
@@ -76,8 +69,10 @@ string LaposApi::getApiPOSTaggingResponse() {
     }
 }
 
-list<pair<string, PosTags>> LaposApi::getPosTagText(string text) {
+list<pair<string, PosTags>> LaposApiModifier::getPosTagText(string text) {
     list<pair<string, PosTags>> tokens;
+
+    replace(text.begin(), text.end(), '\n', ' ');
 
     istringstream iss(text);
     string token;

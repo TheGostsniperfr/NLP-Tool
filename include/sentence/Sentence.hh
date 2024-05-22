@@ -21,6 +21,7 @@ public:
 
     string toString();
     string toStringPosProcess();
+    string toStringFakeSpace();
 
     string toStringWithDebug();
     string toStringPosProcessWithDebug();

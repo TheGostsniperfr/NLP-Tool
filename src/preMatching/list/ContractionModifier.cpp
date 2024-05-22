@@ -2,6 +2,7 @@
 
 ContractionModifier::ContractionModifier() { }
 
+// https://en.wikipedia.org/wiki/Wikipedia:List_of_English_contractions
 vector<string> removeContraction(const string& word) {
     static const unordered_map<string, vector<string>> contractionsMap = {
         {"a'ight", {"alright"}},
