@@ -1,8 +1,12 @@
 #include <iostream>
 #include <vector>
 
+#include <QApplication>
+
 #include "factory/Factory.hh"
 #include "factory/FactoryBuilder.hh"
+
+#include "gui/mainwindow.hh"
 
 #include "preMatching/list/ContractionModifier.hh"
 #include "preMatching/list/UrlModifier.hh"
@@ -14,6 +18,7 @@ using namespace std;
 void printHelp() {
     printf(
         "NLP-TOOL :\n" 
+        "[-gui]                      // Open GUI\n"
         "[-t/-text] [input text]     // Input text for POS tagging\n" 
         "[-v/-verbose]               // Turn on verbose mode\n"
     );
@@ -29,6 +34,13 @@ int main(int argc, char* argv[]) {
     for(size_t i = 0; i < args.size(); i++) {
         if(args[i] == "-v" || args[i] == "-verbose") {
             verbose = true;
+        }
+
+        if(args[i] == "-gui") {
+            QApplication a(argc, argv);
+            MainWindow w;
+            w.show();
+            return a.exec();
         }
 
         if(args[i] == "-t" || args[i] == "-textInput") {

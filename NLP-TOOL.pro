@@ -1,18 +1,23 @@
-TEMPLATE = app
-CONFIG += console c++11
-CONFIG -= qt
+QT += core gui widgets
 
-QMAKE_CXX = g++
-QMAKE_CXXFLAGS += -Wall -g -Iinclude
+greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
+
+CONFIG += c++17
 
 TARGET = nlpTool
 
 SRC_DIR = src
-BUILD_DIR = build
-
+HEADER_DIR = include
 SOURCES += $$files($$SRC_DIR/*.cpp, true)
+HEADERS += $$files($$HEADER_DIR/*.hh, true)
+
+BUILD_DIR = $$PWD/build
 
 OBJECTS_DIR = $$BUILD_DIR
+
+INCLUDEPATH += $$PWD/include
+
+UI_DIR = $$PWD/include/gui
 
 QMAKE_EXTRA_TARGETS += pre_build
 PRE_TARGETDEPS += $$BUILD_DIR
@@ -25,3 +30,7 @@ phony.target = .PHONY
 phony.commands = true
 
 DISTFILES += $$SRC_DIR/*.cpp
+
+qnx: target.path = /tmp/$${TARGET}/bin
+else: unix:!android: target.path = /opt/$${TARGET}/bin
+!isEmpty(target.path): INSTALLS += target
