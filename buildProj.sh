@@ -16,6 +16,7 @@ elif [ "$1" = "clean" ]; then
     make clean -C lapos-0.1.2/
     rm -rf build
     rm -rf .qmake.stash
+    rm -rf Makefile
 else
     usage
 fi
