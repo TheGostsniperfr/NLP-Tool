@@ -14,7 +14,7 @@
    <string>MainWindow</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QTextEdit" name="textEdit">
+   <widget class="QTextEdit" name="resultTxt">
     <property name="geometry">
      <rect>
       <x>10</x>
@@ -27,7 +27,7 @@
      <bool>true</bool>
     </property>
    </widget>
-   <widget class="QTextEdit" name="textEdit_2">
+   <widget class="QTextEdit" name="inputTxt">
     <property name="geometry">
      <rect>
       <x>10</x>
@@ -63,7 +63,7 @@
      <string>Modifiers</string>
     </property>
    </widget>
-   <widget class="QCheckBox" name="checkBox">
+   <widget class="QCheckBox" name="urlModifierCheckbox">
     <property name="geometry">
      <rect>
       <x>600</x>
@@ -76,7 +76,7 @@
      <string>URL</string>
     </property>
    </widget>
-   <widget class="QCheckBox" name="checkBox_2">
+   <widget class="QCheckBox" name="dateModifierCheckbox">
     <property name="geometry">
      <rect>
       <x>600</x>
@@ -89,7 +89,7 @@
      <string>Date</string>
     </property>
    </widget>
-   <widget class="QCheckBox" name="checkBox_3">
+   <widget class="QCheckBox" name="ponctModifierCheckbox">
     <property name="geometry">
      <rect>
       <x>600</x>
@@ -102,7 +102,7 @@
      <string>Ponct</string>
     </property>
    </widget>
-   <widget class="QCheckBox" name="checkBox_4">
+   <widget class="QCheckBox" name="basicModifierCheckbox">
     <property name="geometry">
      <rect>
       <x>600</x>
