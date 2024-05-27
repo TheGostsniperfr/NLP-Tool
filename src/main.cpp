@@ -2,11 +2,10 @@
 #include <vector>
 
 #include <QApplication>
+#include "gui/mainwindow.hh"
 
 #include "factory/Factory.hh"
 #include "factory/FactoryBuilder.hh"
-
-#include "gui/mainwindow.hh"
 
 #include "preMatching/list/ContractionModifier.hh"
 #include "preMatching/list/UrlModifier.hh"

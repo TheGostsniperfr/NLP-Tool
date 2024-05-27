@@ -56,7 +56,8 @@
         "streambuf": "cpp",
         "cinttypes": "cpp",
         "typeinfo": "cpp",
-        "regex": "cpp"
+        "regex": "cpp",
+        "bitset": "cpp"
     },
     "C_Cpp.errorSquiggles": "disabled"
 }
