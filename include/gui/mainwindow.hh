@@ -19,6 +19,5 @@ public:
 
 private:
     Ui::MainWindow *ui;
-    void calculate(std::function<int(int, int)> operation);
 };
 #endif // MAINWINDOW_H

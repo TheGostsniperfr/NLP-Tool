@@ -6,12 +6,15 @@ CONFIG += c++17
 
 TARGET = nlpTool
 
+
+BUILD_DIR = $$PWD/build
 SRC_DIR = src
 HEADER_DIR = include
 SOURCES += $$files($$SRC_DIR/*.cpp, true)
 HEADERS += $$files($$HEADER_DIR/*.hh, true)
 
-BUILD_DIR = $$PWD/build
+FORMS += \
+    src/gui/mainwindow.ui
 
 OBJECTS_DIR = $$BUILD_DIR
 
