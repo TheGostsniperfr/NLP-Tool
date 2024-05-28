@@ -34,7 +34,7 @@ done
 if [ "$CLEAN" = true ]; then
     make clean
     make clean -C lapos-0.1.2/
-    #rm -rf build
+    rm -rf build
     rm -rf .qmake.stash
     rm -rf Makefile
 else

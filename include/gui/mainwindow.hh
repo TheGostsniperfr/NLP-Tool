@@ -5,6 +5,16 @@
 #include <QTimer>
 #include <vector>
 #include <string>
+#include <QThread>
+#include <QTextCursor>
+
+#include "factory/Factory.hh"
+#include "factory/FactoryBuilder.hh"
+
+#include "preMatching/list/ContractionModifier.hh"
+#include "preMatching/list/UrlModifier.hh"
+#include "preMatching/list/PonctModifier.hh"
+#include "preMatching/list/LaposApiModifier.hh"
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
@@ -22,13 +32,11 @@ public:
 
 private slots:
     void on_pushButton_clicked();
-    void addNextToken(); // Nouveau slot pour ajouter les tokens un par un
+    void textAppend(Sentence* sentence);
 
 private:
     Ui::MainWindow *ui;
-    QTimer *timer;
-    std::vector<std::string> tokenSentence; // Vecteur pour stocker les tokens
-    size_t currentTokenIndex; // Indice du token actuel
+
 };
 
 #endif // MAINWINDOW_H
