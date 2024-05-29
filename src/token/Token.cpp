@@ -1,18 +1,3 @@
-/*
-        TODO :
-
-        parameter:
-            - originalString
-            - postProcessingString (n't -> not)
-            - IPOSToken
-
-        getIPosToken
-        getIPosTokenAsString
-        getIPosTokenDescription
-        toString
-
-*/
-
 #include "token/Token.hh"
 
 

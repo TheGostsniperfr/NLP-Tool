@@ -1,17 +1,3 @@
-/*
-    TODO :
-
-    Build the main factory:
-
-    addPreMatchingModifier:
-        - take a pre maching model
-
-        - return this
-
-    build:
-        - return a factory class
-*/
-
 #include "factory/FactoryBuilder.hh"
 
 #include <list>

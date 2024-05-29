@@ -1,28 +1,3 @@
-/*
-    TODO :
-
-    list of token class
-    parse a text in token 
-    
-    Pre Machining :
-        - transform invalid token in valid (n't -> not)
-        - 
-
-    Pos Tag process : 
-        - run a Pos Tag algorithm
-    
-    Post Processing
-
-
-    
-    - toString
-    
-
-
-
-
-*/
-
 #include "sentence/Sentence.hh"
 
 Sentence::Sentence(string inputText) {
