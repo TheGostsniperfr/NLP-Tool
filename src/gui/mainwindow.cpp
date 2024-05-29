@@ -31,10 +31,10 @@ void MainWindow::on_pushButton_clicked()
     qInfo() << "dateModifierCheckbox:" << dateModifierCheckbox;
 
     FactoryBuilder* fb = new FactoryBuilder();
-    if (basicModifierCheckbox) fb->withPreMatchingModifier(new ContractionModifier());
+    if (dateModifierCheckbox) fb->withPreMatchingModifier(new ContractionModifier());
     if (urlModifierCheckbox) fb->withPreMatchingModifier(new UrlModifier());
     if (pontModifierCheckbox) fb->withPreMatchingModifier(new PonctModifier());
-    if (dateModifierCheckbox) fb->withPreMatchingModifier(new LaposApiModifier());
+    if (basicModifierCheckbox) fb->withPreMatchingModifier(new LaposApiModifier());
 
     Factory* factory = fb->build();
 
@@ -52,11 +52,9 @@ void MainWindow::textAppend(Sentence* sentence)
 {
     QTextCursor cursor(ui->resultTxt->textCursor());
     for(Token* token : sentence->getTokenSentence()) {
-        if(token->getPosTag() != SPACE) {
-            cursor.movePosition(QTextCursor::End);
-            cursor.insertText(QString::fromStdString(token->getPostProcessingString() + " "));
-            QApplication::processEvents();
-            QThread::msleep(50);
-        }
+        cursor.movePosition(QTextCursor::End);
+        cursor.insertText(QString::fromStdString(token->getPostProcessingString()));
+        QApplication::processEvents();
+        QThread::msleep(50);
     }
 }
