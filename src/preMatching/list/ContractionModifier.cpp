@@ -1,6 +1,6 @@
 #include "preMatching/list/ContractionModifier.hh"
 
-ContractionModifier::ContractionModifier() { }
+ContractionModifier::ContractionModifier(): PreMatchingModifier(-100) { }
 
 ContractionModifier::~ContractionModifier() { }
 

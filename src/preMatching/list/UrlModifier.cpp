@@ -1,6 +1,6 @@
 #include "preMatching/list/UrlModifier.hh"
 
-UrlModifier::UrlModifier() { }
+UrlModifier::UrlModifier() : PreMatchingModifier(-80) { }
 
 UrlModifier::~UrlModifier() { }
 

@@ -1,7 +1,7 @@
 
 #include "preMatching/list/LaposApiModifier.hh"
 
-LaposApiModifier::LaposApiModifier() { }
+LaposApiModifier::LaposApiModifier() : PreMatchingModifier(0) { }
 
 LaposApiModifier::~LaposApiModifier() { }
 

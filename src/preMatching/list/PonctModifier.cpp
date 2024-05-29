@@ -1,6 +1,6 @@
 #include "preMatching/list/PonctModifier.hh"
 
-PonctModifier::PonctModifier() { }
+PonctModifier::PonctModifier() : PreMatchingModifier(-60) { }
 
 PonctModifier::~PonctModifier() { }
 
