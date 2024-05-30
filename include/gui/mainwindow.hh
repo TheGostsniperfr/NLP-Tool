@@ -16,6 +16,8 @@
 #include "preMatching/list/PonctModifier.hh"
 #include "preMatching/list/LaposApiModifier.hh"
 
+#include "gui/clickableTextEdit.hh"
+
 QT_BEGIN_NAMESPACE
 namespace Ui {
 class MainWindow;
@@ -33,6 +35,7 @@ public:
 private slots:
     void on_pushButton_clicked();
     void textAppend(Sentence* sentence);
+    void handleWordClicked(const QString &word);
 
 private:
     Ui::MainWindow *ui;

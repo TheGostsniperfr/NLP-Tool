@@ -6,6 +6,11 @@ MainWindow::MainWindow(QWidget *parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+
+    ClickableTextEdit *resultTxt = qobject_cast<ClickableTextEdit*>(ui->resultTxt);
+    if (resultTxt) {
+        connect(resultTxt, &ClickableTextEdit::wordClicked, this, &MainWindow::handleWordClicked);
+    }
 }
 
 MainWindow::~MainWindow()
@@ -57,4 +62,9 @@ void MainWindow::textAppend(Sentence* sentence)
         QApplication::processEvents();
         QThread::msleep(50);
     }
+}
+
+void MainWindow::handleWordClicked(const QString &word)
+{
+    qInfo() << "Word clicked:" << word;
 }
