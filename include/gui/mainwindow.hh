@@ -34,11 +34,13 @@ public:
 
 private slots:
     void on_pushButton_clicked();
-    void textAppend(Sentence* sentence);
-    void handleWordClicked(const QString &word);
-
+    void textAppend();
+    void handleWordClicked(const QString &word, int wordIndex);
+    Token* getTokenFromWord(const QString &word);
 private:
     Ui::MainWindow *ui;
+    Sentence* sentence;
+
 
 };
 

@@ -13,7 +13,7 @@ public:
     ClickableTextEdit(QWidget *parent = nullptr) : QTextEdit(parent) {}
 
 signals:
-    void wordClicked(const QString &word);
+    void wordClicked(const QString &word, int wordIndex);
 
 protected:
     void mousePressEvent(QMouseEvent *event) override {
@@ -21,7 +21,10 @@ protected:
             QTextCursor cursor = cursorForPosition(event->pos());
             cursor.select(QTextCursor::WordUnderCursor);
             QString word = cursor.selectedText();
-            emit wordClicked(word);
+            
+            int wordIndex = cursor.selectionStart();
+
+            emit wordClicked(word, wordIndex);
             QTextEdit::mousePressEvent(event);
         }
     }

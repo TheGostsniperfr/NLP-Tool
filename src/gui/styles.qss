@@ -1,17 +1,16 @@
 QWidget {
-    background-color: #333333; /* Couleur de fond sombre */
+    background-color: #333333;
 }
 
-/* Définition des bordures pour les widgets */
 QWidget {
-    border: 2px solid #bb0000; /* Couleur de bordure sombre */
-    border-radius: 5px; /* Rayon de bordure */
+    border: 2px solid #bb0000; 
+    border-radius: 5px;
     color: white;
 
 }
 
 QTextEdit {
-    background-color: #44444454; /* Couleur de fond gris clair */
+    background-color: #44444454;
 }
 
 QLabel {

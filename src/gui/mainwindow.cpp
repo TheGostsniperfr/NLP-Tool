@@ -43,17 +43,17 @@ void MainWindow::on_pushButton_clicked()
 
     Factory* factory = fb->build();
 
-    Sentence* sentence = factory->run(textInput.toStdString(), true);
+    sentence = factory->run(textInput.toStdString(), true);
 
     std::string resultText = sentence->toStringPosProcessWithDebug();
     qInfo() << QString::fromStdString(resultText);
 
     ui->resultTxt->setPlainText("");
 
-    textAppend(sentence);
+    textAppend();
 }
 
-void MainWindow::textAppend(Sentence* sentence)
+void MainWindow::textAppend()
 {
     QTextCursor cursor(ui->resultTxt->textCursor());
     for(Token* token : sentence->getTokenSentence()) {
@@ -64,7 +64,22 @@ void MainWindow::textAppend(Sentence* sentence)
     }
 }
 
-void MainWindow::handleWordClicked(const QString &word)
+void MainWindow::handleWordClicked(const QString &word, int wordIndex)
 {
+    Token* token = getTokenFromWord(word);
+
     qInfo() << "Word clicked:" << word;
+    qInfo() << "Token clicked:" << QString::fromStdString(token->getPostProcessingString());
+    qInfo() << "Pos Tag name:" << QString::fromStdString(getPosTagInfo(token->getPosTag()).tagName);
+}
+
+Token* MainWindow::getTokenFromWord(const QString &word) {
+    for(Token* token : sentence->getTokenSentence()) {
+        QString qstr = QString::fromStdString(token->getPostProcessingString());
+        if(qstr == word) {
+            return token;
+        }
+    }
+
+    throw runtime_error("Token not found.");
 }
