@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>678</width>
+    <width>691</width>
     <height>362</height>
    </rect>
   </property>
@@ -14,7 +14,7 @@
    <string>MainWindow</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="ClickableTextEdit" name="resultTxt">
+   <widget class="ClickableTextEdit" name="resultTxt" native="true">
     <property name="geometry">
      <rect>
       <x>10</x>
@@ -23,7 +23,7 @@
       <height>271</height>
      </rect>
     </property>
-    <property name="readOnly">
+    <property name="readOnly" stdset="0">
      <bool>true</bool>
     </property>
    </widget>
@@ -117,6 +117,13 @@
    </widget>
   </widget>
  </widget>
+ <customwidgets>
+  <customwidget>
+   <class>ClickableTextEdit</class>
+   <extends>QWidget</extends>
+   <header>clickabletextedit.h</header>
+  </customwidget>
+ </customwidgets>
  <resources/>
  <connections/>
 </ui>

@@ -2,6 +2,7 @@
 #include <vector>
 
 #include <QApplication>
+#include <QFile>
 #include "gui/mainwindow.hh"
 
 #include "factory/Factory.hh"
@@ -37,6 +38,12 @@ int main(int argc, char* argv[]) {
 
         if(args[i] == "-gui") {
             QApplication a(argc, argv);
+            QFile file("src/gui/styles.qss");
+            file.open(QFile::ReadOnly);
+            QString styleSheet = QLatin1String(file.readAll());
+
+            a.setStyleSheet(styleSheet);
+
             MainWindow w;
             w.show();
             return a.exec();
