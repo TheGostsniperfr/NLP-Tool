@@ -20,3 +20,12 @@ QLabel {
 QCheckBox {
     border: none;
 }
+
+#AppTitle {
+    font-size: 32px;
+    font-weight: bold;
+}
+
+#PosTagLabel {
+    font-size: 16px;
+}

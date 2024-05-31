@@ -67,10 +67,20 @@ void MainWindow::textAppend()
 void MainWindow::handleWordClicked(const QString &word, int wordIndex)
 {
     Token* token = getTokenFromWord(word);
-
-    qInfo() << "Word clicked:" << word;
-    qInfo() << "Token clicked:" << QString::fromStdString(token->getPostProcessingString());
-    qInfo() << "Pos Tag name:" << QString::fromStdString(getPosTagInfo(token->getPosTag()).tagName);
+    if(token == nullptr) {
+        ui->PosTagLabel->setText("");
+    } else {
+        if(token->getPosTag() == NONE) {
+            ui->PosTagLabel->setText(QString::fromStdString(
+                "No tag found"));
+        } else {
+            ui->PosTagLabel->setText(QString::fromStdString(
+                "Tags: " + getPosTagInfo(token->getPosTag()).tagName + "\n" +
+                "Info: " + getPosTagInfo(token->getPosTag()).description
+            ));
+        }
+        
+    }
 }
 
 Token* MainWindow::getTokenFromWord(const QString &word) {
@@ -81,5 +91,5 @@ Token* MainWindow::getTokenFromWord(const QString &word) {
         }
     }
 
-    throw runtime_error("Token not found.");
+    return nullptr;
 }
