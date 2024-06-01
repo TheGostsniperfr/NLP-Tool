@@ -73,10 +73,10 @@ int main(int argc, char* argv[]) {
 
     Sentence* sentence = factory->run(textInput, verbose);
 
-    cout << sentence->toString() << endl;
-    cout << sentence->toStringPosProcess() << endl;
+    // cout << sentence->toString() << endl;
+    // cout << sentence->toStringPosProcess() << endl;
 
-    cout << sentence->toStringWithDebug() << endl;
+    // cout << sentence->toStringWithDebug() << endl;
     cout << sentence->toStringPosProcessWithDebug();
 
     // Free memory

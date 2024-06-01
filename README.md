@@ -11,9 +11,12 @@ Additionally, we provide a simple GUI to use this tool:
 ```bash
 $ ./nlpTool -gui
 ```
-## How to install:
+## How to install and clean:
 ```bash
-$ make
+$ ./buildProj.sh -j N (if you want to compile with threads)
+```
+```bash
+$ ./buildProj.sh clean
 ```
 ## How to use it:
 
@@ -36,10 +39,13 @@ Output:
 
 ```bash
 loading ./lapos-0.1.2/model_big/model.la...done
-Lapos API output: Hello/NNP world/NN !/.
-Hello | NNP
+out: loading the models from the directory "./lapos-0.1.2/model_big/" ...done
+hello/CD world/NN !/.
+
+hello | CD
 world | NN
 ! | .
+hello/CD world/NN !/. 
 ```
 
 Note: Tags may vary depending on the Lapos model used.
