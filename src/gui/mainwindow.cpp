@@ -64,7 +64,7 @@ void MainWindow::textAppend()
     }
 }
 
-void MainWindow::handleWordClicked(const QString &word, int wordIndex)
+void MainWindow::handleWordClicked(const QString &word, __attribute__((unused)) int wordIndex)
 {
     Token* token = getTokenFromWord(word);
     if(token == nullptr) {

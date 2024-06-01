@@ -12,6 +12,7 @@ SRC_DIR = src
 HEADER_DIR = include
 SOURCES += $$files($$SRC_DIR/*.cpp, true)
 HEADERS += $$files($$HEADER_DIR/*.hh, true)
+HEADERS += include/gui/ui_mainwindow.h
 
 FORMS += \
     src/gui/mainwindow.ui

@@ -203,7 +203,7 @@ vector<string> removeContraction(const string& word) {
     }
 }
 
-void ContractionModifier::run(Sentence* sentence, bool verbose) {
+void ContractionModifier::run(Sentence* sentence, __attribute__((unused)) bool verbose) {
     const auto& tokenSentence = sentence->getTokenSentence();
 
     auto it = tokenSentence.begin();

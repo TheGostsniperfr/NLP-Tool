@@ -4,7 +4,7 @@ PonctModifier::PonctModifier() : PreMatchingModifier(-60) { }
 
 PonctModifier::~PonctModifier() { }
 
-void PonctModifier::run(Sentence* sentence, bool verbose) {
+void PonctModifier::run(Sentence* sentence, __attribute__((unused)) bool verbose) {
     regex pattern("[.,;:!?]");
 
     for (Token* token : sentence->getTokenSentence()) {

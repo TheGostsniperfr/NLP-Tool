@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>MainWindow</string>
+   <string>Chat NLP</string>
   </property>
   <widget class="QWidget" name="centralwidget">
    <widget class="ClickableTextEdit" name="resultTxt" native="true">

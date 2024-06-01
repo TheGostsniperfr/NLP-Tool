@@ -13,17 +13,9 @@ FactoryBuilder& FactoryBuilder::withPreMatchingModifier(PreMatchingModifier* pre
 }
 
 Factory* FactoryBuilder::build() {
-    // if(this->preMatchingModifierList.empty()) {
-    //     throw InvalidFactoryBuilderParametersException();
-    // }
-
     preMatchingModifierList.sort([](PreMatchingModifier* a, PreMatchingModifier* b) {
         return a->getModelCoef() < b->getModelCoef();
     });
-
-    for(PreMatchingModifier* x : this->preMatchingModifierList) {
-        cout << x->getModelCoef() << endl;
-    }
     
     return new Factory(this->preMatchingModifierList);
 }

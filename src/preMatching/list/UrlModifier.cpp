@@ -4,7 +4,7 @@ UrlModifier::UrlModifier() : PreMatchingModifier(-80) { }
 
 UrlModifier::~UrlModifier() { }
 
-void UrlModifier::run(Sentence* sentence, bool verbose) {
+void UrlModifier::run(Sentence* sentence, __attribute__((unused)) bool verbose) {
     bool urlDetected = false;
     
     for (Token* token : sentence->getTokenSentence()) {
