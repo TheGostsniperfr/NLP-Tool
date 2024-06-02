@@ -22,7 +22,7 @@ void MainWindow::on_pushButton_clicked()
 {
 
     QString textInput = ui->inputTxt->toPlainText();
-    qInfo() << textInput;
+    // qInfo() << textInput;
 
     // Get modifiers :
     bool basicModifierCheckbox = ui->basicModifierCheckbox->isChecked();
@@ -30,10 +30,10 @@ void MainWindow::on_pushButton_clicked()
     bool pontModifierCheckbox = ui->ponctModifierCheckbox->isChecked();
     bool dateModifierCheckbox = ui->dateModifierCheckbox->isChecked();
 
-    qInfo() << "basicModifierCheckbox:" << basicModifierCheckbox;
-    qInfo() << "urlModifierCheckbox:" << urlModifierCheckbox;
-    qInfo() << "pontModifierCheckbox:" << pontModifierCheckbox;
-    qInfo() << "dateModifierCheckbox:" << dateModifierCheckbox;
+    // qInfo() << "basicModifierCheckbox:" << basicModifierCheckbox;
+    // qInfo() << "urlModifierCheckbox:" << urlModifierCheckbox;
+    // qInfo() << "pontModifierCheckbox:" << pontModifierCheckbox;
+    // qInfo() << "dateModifierCheckbox:" << dateModifierCheckbox;
 
     FactoryBuilder* fb = new FactoryBuilder();
     if (dateModifierCheckbox) fb->withPreMatchingModifier(new ContractionModifier());
@@ -65,7 +65,12 @@ void MainWindow::textAppend()
 }
 
 void MainWindow::handleWordClicked(const QString &word, __attribute__((unused)) int wordIndex)
-{
+{   
+    if(word == "") {
+        ui->PosTagLabel->setText("");
+        return;
+    }    
+
     Token* token = getTokenFromWord(word);
     if(token == nullptr) {
         ui->PosTagLabel->setText("");
