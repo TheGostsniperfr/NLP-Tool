@@ -86,7 +86,7 @@
      </rect>
     </property>
     <property name="text">
-     <string>Contract</string>
+     <string>Date</string>
     </property>
    </widget>
    <widget class="QCheckBox" name="ponctModifierCheckbox">
@@ -145,6 +145,19 @@
     </property>
     <property name="text">
      <string/>
+    </property>
+   </widget>
+   <widget class="QCheckBox" name="contractionModifierCheckbox">
+    <property name="geometry">
+     <rect>
+      <x>600</x>
+      <y>210</y>
+      <width>85</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Contract</string>
     </property>
    </widget>
   </widget>

@@ -29,17 +29,20 @@ void MainWindow::on_pushButton_clicked()
     bool urlModifierCheckbox = ui->urlModifierCheckbox->isChecked();
     bool pontModifierCheckbox = ui->ponctModifierCheckbox->isChecked();
     bool dateModifierCheckbox = ui->dateModifierCheckbox->isChecked();
+    bool contractionModifierCheckbox = ui->contractionModifierCheckbox->isChecked();
 
     // qInfo() << "basicModifierCheckbox:" << basicModifierCheckbox;
     // qInfo() << "urlModifierCheckbox:" << urlModifierCheckbox;
     // qInfo() << "pontModifierCheckbox:" << pontModifierCheckbox;
     // qInfo() << "dateModifierCheckbox:" << dateModifierCheckbox;
+    // qInfo() << "contractionModifierCheckbox:" << contractionModifierCheckbox;
 
     FactoryBuilder* fb = new FactoryBuilder();
-    if (dateModifierCheckbox) fb->withPreMatchingModifier(new ContractionModifier());
+    if (contractionModifierCheckbox) fb->withPreMatchingModifier(new ContractionModifier());
     if (urlModifierCheckbox) fb->withPreMatchingModifier(new UrlModifier());
     if (pontModifierCheckbox) fb->withPreMatchingModifier(new PonctModifier());
     if (basicModifierCheckbox) fb->withPreMatchingModifier(new LaposApiModifier());
+    if (dateModifierCheckbox) fb->withPreMatchingModifier(new DateModifier());
 
     Factory* factory = fb->build();
 

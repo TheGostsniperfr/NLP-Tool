@@ -15,6 +15,8 @@
 #include "preMatching/list/UrlModifier.hh"
 #include "preMatching/list/PonctModifier.hh"
 #include "preMatching/list/LaposApiModifier.hh"
+#include "preMatching/list/DateModifier.hh"
+
 
 #include "gui/clickableTextEdit.hh"
 
