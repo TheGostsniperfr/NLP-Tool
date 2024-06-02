@@ -30,12 +30,14 @@ void MainWindow::on_pushButton_clicked()
     bool pontModifierCheckbox = ui->ponctModifierCheckbox->isChecked();
     bool dateModifierCheckbox = ui->dateModifierCheckbox->isChecked();
     bool contractionModifierCheckbox = ui->contractionModifierCheckbox->isChecked();
+    bool corpModifierCheckbox = ui->corpModifierCheckbox->isChecked();
 
     // qInfo() << "basicModifierCheckbox:" << basicModifierCheckbox;
     // qInfo() << "urlModifierCheckbox:" << urlModifierCheckbox;
     // qInfo() << "pontModifierCheckbox:" << pontModifierCheckbox;
     // qInfo() << "dateModifierCheckbox:" << dateModifierCheckbox;
     // qInfo() << "contractionModifierCheckbox:" << contractionModifierCheckbox;
+    // qInfo() << "corpModifierCheckbox:" << corpModifierCheckbox;
 
     FactoryBuilder* fb = new FactoryBuilder();
     if (contractionModifierCheckbox) fb->withPreMatchingModifier(new ContractionModifier());
@@ -43,6 +45,7 @@ void MainWindow::on_pushButton_clicked()
     if (pontModifierCheckbox) fb->withPreMatchingModifier(new PonctModifier());
     if (basicModifierCheckbox) fb->withPreMatchingModifier(new LaposApiModifier());
     if (dateModifierCheckbox) fb->withPreMatchingModifier(new DateModifier());
+    if (corpModifierCheckbox) fb->withPreMatchingModifier(new CorpModifier());
 
     Factory* factory = fb->build();
 

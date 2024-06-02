@@ -160,6 +160,19 @@
      <string>Contract</string>
     </property>
    </widget>
+   <widget class="QCheckBox" name="corpModifierCheckbox">
+    <property name="geometry">
+     <rect>
+      <x>600</x>
+      <y>240</y>
+      <width>85</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Corp</string>
+    </property>
+   </widget>
   </widget>
  </widget>
  <customwidgets>

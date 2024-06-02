@@ -25,6 +25,7 @@ enum PosTags
     GPS,
     DATE,
     SPACE,
+    CORP,
 
     CC, // conjunction, coordinating
     CD, // numeral, cardinal

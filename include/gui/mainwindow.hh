@@ -16,6 +16,7 @@
 #include "preMatching/list/PonctModifier.hh"
 #include "preMatching/list/LaposApiModifier.hh"
 #include "preMatching/list/DateModifier.hh"
+#include "preMatching/list/CorpModifier.hh"
 
 
 #include "gui/clickableTextEdit.hh"

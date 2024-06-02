@@ -13,6 +13,7 @@
 #include "preMatching/list/PonctModifier.hh"
 #include "preMatching/list/LaposApiModifier.hh"
 #include "preMatching/list/DateModifier.hh"
+#include "preMatching/list/CorpModifier.hh"
 
 using namespace std;
 
@@ -70,6 +71,7 @@ int main(int argc, char* argv[]) {
     fb->withPreMatchingModifier(new PonctModifier());
     fb->withPreMatchingModifier(new LaposApiModifier());
     fb->withPreMatchingModifier(new DateModifier());
+    fb->withPreMatchingModifier(new CorpModifier());
 
     Factory* factory = fb->build();
 

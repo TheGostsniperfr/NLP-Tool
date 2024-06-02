@@ -7,6 +7,7 @@ PosTags getPosTagFromToken(const string& tag) {
         {"GPS", PosTags::GPS},
         {"DATE", PosTags::DATE},
         {"SPACE", PosTags::SPACE},
+        {"CORP", PosTags::CORP},
         {"CC", PosTags::CC},
         {"CD", PosTags::CD},
         {"DT", PosTags::DT},
@@ -58,6 +59,7 @@ PosTagInfo getPosTagInfo(PosTags tag) {
         {PosTags::GPS, {"GPS", "Gps coordinate"}},
         {PosTags::DATE, {"DATE", "Date"}},
         {PosTags::SPACE, {"SPACE", "Space"}},
+        {PosTags::CORP, {"CORP", "Corporation"}},
         
         {PosTags::CC, {"CC", "Conjunction, Coordinating"}},
         {PosTags::CD, {"CD", "Numeral, Cardinal"}},
